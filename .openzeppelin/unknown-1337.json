@@ -1,0 +1,102 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xD833215cBcc3f914bD1C9ece3EE7BF8B14f841bb",
+    "txHash": "0xf8f51a60fc31b1948238b8cab04a0c58ef3c8e04f3a81a8fcc3ff38930b26780"
+  },
+  "proxies": [
+    {
+      "address": "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7",
+      "txHash": "0xfdd68076418b066cd03fd1ccf29f37a54b4d67776c146ff0c50d7b2f6d2bd79b",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xA57B8a5584442B467b4689F1144D269d096A3daF",
+      "txHash": "0xb8272838623250e0da6258f5abb67f891bafd7b53ad082fb1f1f7b08abdd0293",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "cba9f8cf52e3c449631a04ea218a6cedcaf7c366669cfc257c89a008266c768f": {
+      "address": "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550",
+      "txHash": "0xefef04a31c216e9e8ea2d47313dc1da7a42dc247379ecdcb72941a0ba3c1b41c",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Box",
+            "label": "_value",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\box.sol:4"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          }
+        }
+      }
+    },
+    "de02d0c25691fb3647977a644ad9ecc4f7c52f6cb33e891472aad37033e40ecc": {
+      "address": "0x59d3631c86BbE35EF041872d502F218A39FBa150",
+      "txHash": "0x4ef7aed81dd5bb1d29b7452d8b24aacca38fff0563cd579975709f6e3595ae5b",
+      "layout": {
+        "storage": [
+          {
+            "contract": "BoxV2",
+            "label": "_value",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\BoxV2.sol:6"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          }
+        }
+      }
+    },
+    "d4b5634fb4d89e3f10b5de84ca510ff0279cd11756a223e06b8aebdbf1675480": {
+      "address": "0x2612Af3A521c2df9EAF28422Ca335b04AdF3ac66",
+      "txHash": "0x0e3c8b5973fd42d4a606e2594a64a62ae58b210192da08acae4eaf9b29f4c2f2",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:39"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:44"
+          },
+          {
+            "contract": "AdminBox",
+            "label": "_value",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\AdminBox.sol:8"
+          },
+          {
+            "contract": "AdminBox",
+            "label": "_admin",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\AdminBox.sol:9"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    }
+  }
+}
