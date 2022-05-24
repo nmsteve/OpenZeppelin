@@ -1,8 +1,8 @@
 // migrations/3_deploy_upgradeable_box.js
 const { deployProxy } = require('@openzeppelin/truffle-upgrades');
 
-const Box = artifacts.require('Box');
+const BoxV1 = artifacts.require('BoxV1');
 
 module.exports = async function (deployer) {
-  await deployProxy(Box, [42], { deployer, initializer: 'store' });
+  await deployProxy(BoxV1, [42], { deployer, initializer: 'store' });
 };

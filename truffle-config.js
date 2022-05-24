@@ -18,7 +18,12 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+// truffle-config.js
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const { alchemyApiKey, mnemonic } = require('./account.json');
+require('dotenv').config()  
+
+
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -33,7 +38,7 @@ module.exports = {
    *
    * $ truffle test --network <network-name>
    */
-
+  
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
@@ -57,14 +62,27 @@ module.exports = {
     // },
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
-    // ropsten: {
-    // provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
-    // network_id: 3,       // Ropsten's id
-    // gas: 5500000,        // Ropsten has a lower block limit than mainnet
-    // confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-    // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-    // skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
-    // },
+
+    rinkeby: {
+            provider: () => new HDWalletProvider(
+             mnemonic, `wss://eth-rinkeby.alchemyapi.io/v2/${alchemyApiKey}`,
+           ),
+           network_id: 4,
+            gasPrice: 10e9,
+            skipDryRun: true,
+         },
+
+      
+
+    ropsten: {
+    provider: () => new HDWalletProvider(process.env.MNEMONIC, 
+      `wss://ropsten.infura.io/ws/v3/${process.env.SECRET_KEY}`),
+    network_id: 3,       // Ropsten's id
+    gas: 5500000,        // Ropsten has a lower block limit than mainnet
+    confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+    timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+    skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+     },
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
@@ -72,6 +90,8 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
   },
+
+
 
   // Set default mocha options here, use special reporters etc.
   mocha: {

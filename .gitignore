@@ -1,2 +1,6 @@
 node_modules
 build
+account.text
+package-lock.json
+.env
+account.json
